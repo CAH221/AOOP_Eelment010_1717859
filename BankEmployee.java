@@ -1,7 +1,7 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:2A                                          *//
+//* Task:2C                                          *//
 //* Description:A subclass Bank employee which       *//
 //*             inherits methods from superclass     *//
 //*             Employee.                            *//
@@ -15,6 +15,11 @@
 //Employee.
 public class BankEmployee extends Employee
 {
+	
+	public String takeBreak()
+	{
+       return "Go to pub!";
+    }
     //A specific method for BankEmployee subclass.
 	//Public accessed by all classes.
 	public String countsMoney()

@@ -1,7 +1,7 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:2A                                          *//
+//* Task:2C                                          *//
 //* Description:A subclass Hospital employee which   *//
 //*             inherits methods from superclass     *//
 //*             Employee.                            *//
@@ -16,6 +16,11 @@
 public class HospitalEmployee extends Employee 
 {
 	
+	public String takeBreak() 
+	{
+       return "Go to hospital’s canteen!";
+
+	}
 	    //A specific method for HospitalEmployee subclass.
 		//Public accessed by all classes.
 		public String nursing()
@@ -25,3 +30,4 @@ public class HospitalEmployee extends Employee
 		}
 		
 }//End of class HospitlEmployee
+

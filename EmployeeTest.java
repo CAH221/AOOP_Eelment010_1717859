@@ -1,7 +1,7 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:2B                                          *//
+//* Task:2D                                          *//
 //* Description:Class EmployeeTest which creates     *//
 //*             instances of the objects BankEmployee*//
 //*             HospitalEmployee, UniversityEmployee *//
@@ -40,27 +40,30 @@ public class EmployeeTest extends Applet {
 		  JOptionPane.showMessageDialog(this,Status);
 	 repaint();
 	  }
-	 public void paint( Graphics g )    
+	 /* (non-Javadoc)
+	 * @see java.awt.Container#paint(java.awt.Graphics)
+	 */
+	public void paint( Graphics g )    
 	 {// call inherited version of method paint      
 		 super.paint( g );        // draw rectangle starting from (15, 10) that is 270   
 		 // pixels wide and 20 pixels tall       
 		 g.drawRect(15, 10, 470, 100 );
 		
-		 g.drawString("The Bank Employee is " +aBankEmployee.countsMoney(),30,30);
-		 g.drawString("The Bank Employee is " +aHospitalEmployee.nursing(),30,50);
-		 g.drawString("The Bank Employee is " +aUniversityEmployee.teachStudents(),30,70);
+		 g.drawString("The Bank Employee is out  " +aBankEmployee.takeBreak(),30,30);
+		 g.drawString("The Bank Employee is out " +aHospitalEmployee.takeBreak(),30,50);
+		 g.drawString("The Bank Employee is out " +aUniversityEmployee.takeBreak(),30,70);
 		 
 	  }
 	  public void stop()
 	  {
-		  Status += "--Stopping!";
-		  showStatus("The applet is stopping");
+		  Status += "--Stoping!";
+		  showStatus("The applet is stoping");
 		  JOptionPane.showMessageDialog(this,Status);
 		  repaint();  
 	  }
 	  public void destroy()
 	  {
-		  Status += "--Destroyed!";
+		  Status += "--Destroyeed!";
 		  showStatus("The applet is being destroyed");
 		  JOptionPane.showMessageDialog(this,Status);
 		  repaint();
