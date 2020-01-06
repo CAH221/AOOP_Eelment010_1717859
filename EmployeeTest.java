@@ -1,18 +1,22 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:1B                                          *//
+//* Task:2D                                          *//
 //* Description:Class EmployeeTest which creates     *//
 //*             instances of the objects BankEmployee*//
 //*             HospitalEmployee, UniversityEmployee *//
 //*             all which extend class Employee.     *//
 //*                                                  *//
-//*Date: 20/10/2019                                  *//
+//*Date: 28/10/2019                                  *//
 //*                                                  *//
 //*                                                  *//
 //****************************************************//
+import java.applet.Applet;
+import java.awt.Graphics;
 
-public class EmployeeTest {
+import javax.swing.JOptionPane;  
+
+public class EmployeeTest extends Applet {
 
 	//Instantiate a bank, university and employee object.
 	//All objects are private.
@@ -20,22 +24,50 @@ public class EmployeeTest {
 	private static UniversityEmployee aUniversityEmployee = new UniversityEmployee();
 	private static HospitalEmployee aHospitalEmployee = new HospitalEmployee();
 	
-	//Method main to run the program.
-	public static void main(String []args) 
-	{   
-		//BankEmployee object calls class method countsMoney.
-		aBankEmployee.countsMoney();
-		//BankEmployee inherits method working from superclass Employee.
-		aBankEmployee.working();
-		//UniversityEmployee object calls class method teachStudents.
-		aUniversityEmployee.teachStudents();
-		//UniversityEmployee inherits method working from superclass Employee.
-		aUniversityEmployee.working();
-		//HospitalEmployee object calls class method nursing.
-		aHospitalEmployee.nursing();
-		//HospitalEmployee inherits method holidays from superclass Employee.
-		aHospitalEmployee.holiday();
+	 private String Status = "";
+	 
+	 public void init()    
+	 {
+		 Status = "Initializing!"; 
+		 showStatus("The applet is initializing!");
+		 JOptionPane.showMessageDialog(this,Status);        
+	 repaint();     
+	 }
+	 public void start() 
+	 {
+		  Status += " Starting!";
+		  showStatus("The applet is starting");
+		  JOptionPane.showMessageDialog(this,Status);
+	 repaint();
+	  }
+	 /* (non-Javadoc)
+	 * @see java.awt.Container#paint(java.awt.Graphics)
+	 */
+	public void paint( Graphics g )    
+	 {// call inherited version of method paint      
+		 super.paint( g );        // draw rectangle starting from (15, 10) that is 270   
+		 // pixels wide and 20 pixels tall       
+		 g.drawRect(15, 10, 470, 100 );
 		
-	}
-	
-}//End of Class EmployeeTest
+		 g.drawString("The Bank Employee is out  " +aBankEmployee.takeBreak(),30,30);
+		 g.drawString("The Bank Employee is out " +aHospitalEmployee.takeBreak(),30,50);
+		 g.drawString("The Bank Employee is out " +aUniversityEmployee.takeBreak(),30,70);
+		 
+	  }
+	  public void stop()
+	  {
+		  Status += "--Stoping!";
+		  showStatus("The applet is stoping");
+		  JOptionPane.showMessageDialog(this,Status);
+		  repaint();  
+	  }
+	  public void destroy()
+	  {
+		  Status += "--Destroyeed!";
+		  showStatus("The applet is being destroyed");
+		  JOptionPane.showMessageDialog(this,Status);
+		  repaint();
+	  }
+	 
+	 
+}//End Class
