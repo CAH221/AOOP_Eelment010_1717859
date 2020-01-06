@@ -1,33 +1,27 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:1F                                         *//
+//* Task:2A                                          *//
 //* Description:A subclass Hospital employee which   *//
 //*             inherits methods from superclass     *//
-//*             Employee and shows method overriding.*//
-//*             and abstract class.                  *//
-//*Date: 19/10/2019                                  *//
+//*             Employee.                            *//
+//*                                                  *//
+//*Date: 28/10/2019                                  *//
 //*                                                  *//
 //*                                                  *//
 //****************************************************//
-//The subclass BankEmployee that inherits from superclass
+
+//The subclass HospitalEmployee that inherits from superclass
 //Employee.
-public class HospitalEmployee extends Employee
+public class HospitalEmployee extends Employee 
 {
-	//abstract class
-	public String writing()
-	{
-		return "Writing a prescription";
-	}
-	//Method Overriding.
-	public String takeABreak()
-	{
+	
+	    //A specific method for HospitalEmployee subclass.
+		//Public accessed by all classes.
+		public String nursing()
+		{   
+			//Output on screen "I nurse patients!"
+			return "I nurse patients!";
+		}
 		
-		return "Go to hospital's canteen!";
-	}
-    
-	
-}//End of class HospitalEmployee
-
-
-	
+}//End of class HospitlEmployee

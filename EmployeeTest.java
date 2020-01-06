@@ -1,18 +1,22 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:1DE                                         *//
+//* Task:2B                                          *//
 //* Description:Class EmployeeTest which creates     *//
 //*             instances of the objects BankEmployee*//
 //*             HospitalEmployee, UniversityEmployee *//
-//*             all which extend class Employee and  *//
-//*             shows method overriding.             *//
-//*Date: 20/10/2019                                  *//
+//*             all which extend class Employee.     *//
+//*                                                  *//
+//*Date: 28/10/2019                                  *//
 //*                                                  *//
 //*                                                  *//
 //****************************************************//
+import java.applet.Applet;
+import java.awt.Graphics;
 
-public class EmployeeTest {
+import javax.swing.JOptionPane;  
+
+public class EmployeeTest extends Applet {
 
 	//Instantiate a bank, university and employee object.
 	//All objects are private.
@@ -20,23 +24,47 @@ public class EmployeeTest {
 	private static UniversityEmployee aUniversityEmployee = new UniversityEmployee();
 	private static HospitalEmployee aHospitalEmployee = new HospitalEmployee();
 	
-	//Method main to run the program.
-	public static void main(String []args) 
-	{   
-		//BankEmployee object calls class method takeABreak.
-		aBankEmployee.takeABreak();
-		//BankEmployee inherits method working from superclass Employee.
-		aBankEmployee.working();
-		//UniversityEmployee object calls class method takeABreak.
-		aUniversityEmployee.takeABreak();
-		//UniversityEmployee inherits method working from superclass Employee.
-		aUniversityEmployee.working();
-		//HospitalEmployee object calls class method takeABreak.
-		aHospitalEmployee.takeABreak();
-		//HospitalEmployee inherits method holidays from superclass Employee.
-		aHospitalEmployee.holiday();
+	 private String Status = "";
+	 
+	 public void init()    
+	 {
+		 Status = "Initializing!"; 
+		 showStatus("The applet is initializing!");
+		 JOptionPane.showMessageDialog(this,Status);        
+	 repaint();     
+	 }
+	 public void start() 
+	 {
+		  Status += " Starting!";
+		  showStatus("The applet is starting");
+		  JOptionPane.showMessageDialog(this,Status);
+	 repaint();
+	  }
+	 public void paint( Graphics g )    
+	 {// call inherited version of method paint      
+		 super.paint( g );        // draw rectangle starting from (15, 10) that is 270   
+		 // pixels wide and 20 pixels tall       
+		 g.drawRect(15, 10, 470, 100 );
 		
-	}
-	
-}//End of Class EmployeeTest
-
+		 g.drawString("The Bank Employee is " +aBankEmployee.countsMoney(),30,30);
+		 g.drawString("The Bank Employee is " +aHospitalEmployee.nursing(),30,50);
+		 g.drawString("The Bank Employee is " +aUniversityEmployee.teachStudents(),30,70);
+		 
+	  }
+	  public void stop()
+	  {
+		  Status += "--Stopping!";
+		  showStatus("The applet is stopping");
+		  JOptionPane.showMessageDialog(this,Status);
+		  repaint();  
+	  }
+	  public void destroy()
+	  {
+		  Status += "--Destroyed!";
+		  showStatus("The applet is being destroyed");
+		  JOptionPane.showMessageDialog(this,Status);
+		  repaint();
+	  }
+	 
+	 
+}//End Class
