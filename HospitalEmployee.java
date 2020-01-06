@@ -1,12 +1,12 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:2C                                          *//
+//* Task:1DE                                         *//
 //* Description:A subclass Hospital employee which   *//
 //*             inherits methods from superclass     *//
-//*             Employee.                            *//
+//*             Employee and shows method overriding.*//
 //*                                                  *//
-//*Date: 28/10/2019                                  *//
+//*Date: 19/10/2019                                  *//
 //*                                                  *//
 //*                                                  *//
 //****************************************************//
@@ -15,19 +15,17 @@
 //Employee.
 public class HospitalEmployee extends Employee 
 {
-	
-	public String takeBreak() 
-	{
-       return "Go to hospital’s canteen!";
-
-	}
+	    //Method overriding
+	    public void takeABreak()
+	    {
+		System.out.println("Go to hospital's canteen!");
+		}
 	    //A specific method for HospitalEmployee subclass.
 		//Public accessed by all classes.
-		public String nursing()
+		public void nursing()
 		{   
 			//Output on screen "I nurse patients!"
-			return "I nurse patients!";
+			System.out.println("I nurse patients!");
 		}
 		
 }//End of class HospitlEmployee
-
