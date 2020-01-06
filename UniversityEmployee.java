@@ -1,12 +1,12 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:2C                                          *//
+//* Task:1F                                          *//
 //* Description:A subclass University employee which *//
 //*             inherits methods from superclass     *//
-//*             Employee.                            *//
+//*             Employee and shows method overriding. *//
 //*                                                  *//
-//*Date: 28/10/2019                                  *//
+//*Date: 19/10/2019                                  *//
 //*                                                  *//
 //*                                                  *//
 //****************************************************//
@@ -15,19 +15,20 @@
 //Employee.
 public class UniversityEmployee extends Employee
 {
-			public String takeBreak() 
-			{
-				return "Go to University’s Restaurant!";
-
-			}
-            //A specific method for UniversityEmployee subclass.
-			//Public accessed by all classes.
-			public String teachStudents()
+	         //Method overriding
+	         public String takeABreak()
+	        {
+		       //System.out.println("Go to University Restaurant!");
+	        	 return "Go to University Restaurant!";
+	        }
+            //Abstract class
+			public String writing()
 			{   
 				//Output on screen "I am teaching"
-				return "I am teaching!";
+				return "Writing teaching notes ";
 			}
 			
 	}//End of class UniversityEmployee
+
 
 
