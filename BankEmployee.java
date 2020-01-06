@@ -1,7 +1,7 @@
 //****************************************************//
 //* Author:1717859                                   *//
 //* Week:4                                           *//
-//* Task:1DE                                         *//
+//* Task:1F                                         *//
 //* Description:A subclass Bank employee which       *//
 //*             inherits methods from superclass     *//
 //*             Employee and shows method overriding.*//
@@ -15,18 +15,18 @@
 //Employee.
 public class BankEmployee extends Employee
 {
-	//Method Overriding.
-	public void takeABreak()
+	//abstract class
+	public String writing()
 	{
-		System.out.println("Go to Pub!");
+		return  "Writing a cheque";
 	}
-    //A specific method for BankEmployee subclass.
-	//Public accessed by all classes.
-	public void countsMoney()
-	{   
-		//Output on screen "I am counting cash!"
-		System.out.println("I am counting cash!");
+	//Method Overriding.
+	public String takeABreak()
+	{
+		//System.out.println("Go to Pub!");
+		return "Go to Pub!";
 	}
+    
 	
 }//End of class BankEmployee
 
